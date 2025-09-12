@@ -1,0 +1,12 @@
+- name: variables
+  hosts: app
+  vars:
+    NAME: Printing variables
+    USER: Azeezshk
+    ID: 15176
+    LOCATION: Nandalur
+  tasks:
+  - name: print variables
+    ansible.builtin.debug:
+      msg: " My name is : {{ NAME }} and User : {{ USER }} and ID is : {{ ID }} and Location is {{ LOCATION }}"
+
