@@ -4,7 +4,7 @@
   vars: #PLAY level variables
     COURSE: "AWS with DevOps"
     DURATION: 120HRS
-    TRAINER: Sivakumar
+    TRAINER: Azeezshk
   tasks:
   - name: Print the Variables
     ansible.builtin.debug:
