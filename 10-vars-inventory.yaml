@@ -1,0 +1,7 @@
+- name: calling variables from inventory
+  hosts: web
+  tasks: 
+  - name: calling variables from inventory (web)
+    ansible.builtin.debug:
+      msg: "Course is : {{ COURSE }} , Trainer is : {{ TRAINER }} and Duration is : {{ DURATION }}"
+  
