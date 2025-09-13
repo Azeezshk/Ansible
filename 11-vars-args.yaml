@@ -10,3 +10,4 @@
 
 
 #calling variables through args is by giving Ex: " -e COURSE=AWS WITH DEVOPS -e DURATION=120hrs -e TRAINER=Azeezshk"
+#ansible-playbook -i inventory.ini -e COURSE=AWS -e DURATION=120HRS -e TRAINER=AZEEZSHK 11-vars-args.yaml
