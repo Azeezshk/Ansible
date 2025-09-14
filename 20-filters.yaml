@@ -1,0 +1,60 @@
+- name: filters
+  hosts: local
+  connection: local
+  tasks:
+  - name: handle undefine variable
+    ansible.builtin.debug:
+    msg: "Hello from {{ person | default('Azeez') }}"
+  
+  - name: convert string into list
+    vars:
+      fruits: " Apple, banana, mango"
+    ansible.builtin.debug:
+      msg: " fruits are : {{ fruits | split(',') }}"
+  
+  - name: convert map into list
+    vars:
+      course:
+        name: ansible
+        duration: 120HRS
+        trainer: Azeezshk
+    ansible.builtin.debug:
+      msg: " The course info is : {{ course | dict2items }}"
+  
+  - name: convert list to map
+    vars:
+      course:
+      - { 'key' : 'name' , 'value' : 'Terraform' }
+      - { 'key' : 'duration' , 'value' : '120HRS' }
+      - { 'key' : 'trainer' , 'value' : 'Azeezshk' }
+    ansible.builtin.debug:
+      msg: "The course infor is : {{ course | items2dict }}"
+
+  - name: convert upper to lower case
+    tags:
+    - uppertolower
+    vars:
+      name: "MYSelf AZEEZ"
+    ansible.builtin.debug:
+      msg: "Hello,: {{ name | lower }}"
+  
+  - name: convert to lower to upper
+    tags:
+    - lowertoupper
+    vars:
+      name: "myseLF Azeez"
+    ansible.builtin.debug:
+        msg: "Hello, {{ name | upper }"
+  
+  - name: print min and max of given numbers
+    vars:
+      numbers: { 45, 456, 7657, 1908, 2030, 66585, 7788888, 9866 }
+    ansible.builtin.debug:
+      msg: "The min and max of given numbers are : {{ numbers | min }} and {{ numbers | max }}"
+  
+  - name: check ip address is correct or not 
+    vars:
+      ip: "34.224.88.101"
+    ansible.builtin.debug:
+      msg: "The ip address is : {{ ip | ansible.ipaddr }}"
+  
