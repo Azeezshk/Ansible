@@ -7,7 +7,7 @@
     - course.yaml
   vars_prompt: 
     - name: GREET
-      prompt: Please enter the value 
+      prompt: Please enter the value
       private: false
   tasks:
     - name: print the task variables
@@ -16,3 +16,12 @@
       ansible.builtin.debug:
         msg: " Hello from : {{ GREET }}"
 
+
+# Variables which will be executed first in order :-
+#1. Command line or args
+#2. Task level
+#3. Files
+#4. Prompt
+#5. Play
+#6. Inventory
+#7. Roles
