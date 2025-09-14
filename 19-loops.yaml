@@ -1,0 +1,13 @@
+- name: install and remove packages in one playbook
+  hosts: web
+  become: yes
+  tasks:
+  - name: install and remove packages
+    ansible.builtin.package:
+      name: "{{ item.name }}"
+      state: "{{ item.state }}"
+    loop: 
+    - { name: nginx , state: absent }
+    - { name: mysql , state: absent }
+    - { name: git , state: present }
+    - { name: gcc , status: present }
