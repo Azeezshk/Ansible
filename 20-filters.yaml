@@ -4,7 +4,7 @@
   tasks:
   - name: handle undefine variable
     ansible.builtin.debug:
-    msg: "Hello from {{ person | default('Azeez') }}"
+      msg: "Hello from {{ person | default('Azeez') }}"
   
   - name: convert string into list
     vars:
