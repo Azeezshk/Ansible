@@ -1,23 +1,23 @@
 - name: calling variables from different parameters
   hosts: local
   connection: local
-  # vars: # play level / global variables
-  #   GREET: "PLAY Variables"
-  # vars_files:
-  #   - course.yaml
-  # vars_prompt: 
-  #   - name: GREET
-  #     prompt: Please enter the value
-  #     private: false
+  vars: # play level / global variables
+    GREET: "PLAY Variables"
+  vars_files:
+    - course.yaml
+  vars_prompt: 
+    - name: GREET
+      prompt: Please enter the value
+      private: false
   tasks:
     - name: print the task variables
-      # vars: # Task variables
-      #   GREET: "Task variables"
+      vars: # Task variables
+        GREET: "Task variables"
       ansible.builtin.debug:
         msg: " Hello from : {{ GREET }}"
 
 
-# Variables which will be executed first in order :-
+# Variables which will be executed first in order
 #1. Command line or args
 #2. Task level
 #3. Files
