@@ -44,7 +44,7 @@
     vars:
       name: "myseLF Azeez"
     ansible.builtin.debug:
-        msg: "Hello, {{ name | upper }}"
+        msg: "Hello, {{ name | upper }"
   
   - name: print min and max of given numbers
     vars:
@@ -56,5 +56,5 @@
     vars:
       ip: "34.224.88.101"
     ansible.builtin.debug:
-      msg: "The ip address is : {{ ip | ansible.ipaddr }}"
+      msg: "The ip address is : {{ ip | ansible.utils.ipaddr }}"
   
