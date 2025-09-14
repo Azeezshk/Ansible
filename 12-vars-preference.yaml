@@ -1,8 +1,8 @@
 - name: calling variables from different parameters
   hosts: local
   connection: local
-  vars: # play level / global variables
-    GREET: "PLAY Variables"
+  # vars: # play level / global variables
+  #   GREET: "PLAY Variables"
   # vars_files:
   #   - course.yaml
   # vars_prompt: 
