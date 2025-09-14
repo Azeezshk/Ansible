@@ -10,4 +10,4 @@
     - { name: nginx , state: absent }
     - { name: mysql , state: absent }
     - { name: git , state: present }
-    - { name: gcc , status: present }
+    - { name: nginx , status: present }
